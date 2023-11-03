@@ -92,7 +92,7 @@ const ChatArea = () => {
             router.push('/login')
         }
         setUser(userData);
-        socket.current = io.connect('http://localhost:8080');
+        socket.current = io.connect('https://livechat-server.onrender.com');
         socket.current.on('server-send-message', (message) => {
             setMessages(prev => [...prev, message]);
             dispatch(refreshSidebarActions.toggle())
